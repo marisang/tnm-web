@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,8 +7,7 @@ export default function CadastroArtista() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between bg-white px-6 py-12 font-sans md:justify-center md:gap-12">
 
-      {/* Container Central (Logotipo e Formulário) */}
-      <div className="flex w-full max-w-sm flex-col items-center mt-12 md:mt-0">
+      <div className="flex w-full max-w-lg flex-col items-center mt-12 md:mt-0">
 
         {/* Logotipo */}
         <div className="mb-8 h-28 w-28 relative">
@@ -22,16 +20,15 @@ export default function CadastroArtista() {
           />
         </div>
 
-        {/* Título */}
         <h1 className="mb-8 text-3xl font-bold text-black">Cadastro</h1>
 
-        {/* Formulário */}
-        <form className="w-full flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="w-full flex flex-col gap-4">
 
           {/* Nome Completo */}
           <input
             type="text"
             placeholder="Nome Completo"
+            name="nomeCompleto"
             className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
             required
           />
@@ -40,21 +37,130 @@ export default function CadastroArtista() {
           <input
             type="text"
             placeholder="Pseudônimo Artístico"
+            name="pseudonimoArtistico"
             className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
           />
+
+          {/* Nacionalidade */}
+          <input
+            type="text"
+            placeholder="Nacionalidade"
+            name="nacionalidade"
+            className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+          />
+
+          {/* Estado Civil */}
+          <select
+            name="estadoCivil"
+            defaultValue=""
+            className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+          >
+            <option value="" disabled>Estado Civil</option>
+            <option value="solteiro">Solteiro(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="divorciado">Divorciado(a)</option>
+            <option value="viuvo">Viúvo(a)</option>
+            <option value="uniao_estavel">União Estável</option>
+          </select>
+
+          {/* Profissão */}
+          <input
+            type="text"
+            placeholder="Profissão"
+            name="profissao"
+            className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+          />
+
+          {/* RG e Órgão Emissor lado a lado */}
+          <div className="flex gap-3">
+            <input
+              type="text"
+              placeholder="RG"
+              name="rg"
+              className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+            />
+            <input
+              type="text"
+              placeholder="Órgão Emissor"
+              name="orgaoEmissor"
+              className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+            />
+          </div>
+
+          {/* CPF */}
+          <input
+            type="text"
+            placeholder="CPF"
+            name="cpf"
+            maxLength={14}
+            className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+            required
+          />
+
+          {/* Data de Nascimento */}
+          <input
+            type="date"
+            placeholder="Data de Nascimento"
+            name="dataNascimento"
+            className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+          />
+
+          {/* Endereço */}
+          <input
+            type="text"
+            placeholder="Endereço"
+            name="endereco"
+            className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+          />
+
+          {/* CEP e Bairro lado a lado */}
+          <div className="flex gap-3">
+            <input
+              type="text"
+              placeholder="CEP"
+              name="cep"
+              maxLength={9}
+              className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+            />
+            <input
+              type="text"
+              placeholder="Bairro"
+              name="bairro"
+              className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+            />
+          </div>
+
+          {/* Município e UF lado a lado */}
+          <div className="flex gap-3">
+            <input
+              type="text"
+              placeholder="Município"
+              name="municipio"
+              className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+            />
+            <input
+              type="text"
+              placeholder="UF"
+              name="uf"
+              maxLength={2}
+              className="w-32 rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
+            />
+          </div>
 
           {/* Email */}
           <input
             type="email"
             placeholder="Email"
+            name="email"
             className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
             required
           />
 
-          {/* WhatsApp */}
+          {/* Celular */}
           <input
             type="tel"
-            placeholder="Whatsapp"
+            placeholder="Celular / Whatsapp"
+            name="celular"
             className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
             required
           />
@@ -63,8 +169,17 @@ export default function CadastroArtista() {
           <input
             type="password"
             placeholder="Senha"
+            name="senha"
             className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
             required
+          />
+
+          {/* Data de Assinatura */}
+          <input
+            type="date"
+            placeholder="Data de Assinatura"
+            name="dataAssinatura"
+            className="w-full rounded-xl bg-[#D9D9D9] px-4 py-4 text-base text-gray-800 placeholder-gray-500 outline-none transition focus:ring-2 focus:ring-[#7A0BC0]"
           />
 
           {/* Checkboxes */}
@@ -90,19 +205,19 @@ export default function CadastroArtista() {
             </label>
           </div>
 
-          {/* Botão Entrar */}
+          {/* Botão */}
           <button
             type="submit"
             className="mt-4 w-full rounded-xl bg-[#7A0BC0] py-4 text-base font-semibold text-white transition hover:bg-[#620999] active:scale-[0.98]"
           >
-            Entrar
+            Cadastrar
           </button>
 
         </form>
       </div>
 
       {/* Rodapé */}
-      <div className="text-sm text-black mb-4">
+      <div className="text-sm text-black mb-4 mt-8">
         Já possui uma conta?{' '}
         <Link
           href="/login"

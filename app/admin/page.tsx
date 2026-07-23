@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import ModerationSection from '@/components/admin/ModerationSection';
 import CreateShowSection from '@/components/admin/CreateShowSection';
+import ImportacaoRelatorios from '@/components/admin/ImportacaoRelatorios';
 
 export default function AdminPage() {
   return (
@@ -27,6 +28,11 @@ export default function AdminPage() {
             
             {/* Right: Create Show */}
             <CreateShowSection />
+          </div>
+
+          {/* Importação de Relatórios */}
+          <div className="mt-6">
+            <ImportacaoRelatorios />
           </div>
         </div>
       </main>
